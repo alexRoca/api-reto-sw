@@ -114,3 +114,17 @@ https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev
 
         Respuesta Exitosa (en caso de no tener datos):
         []
+
+#### 4. Documentacion Swagger
+    GET /api-docs
+
+    Este endpoint devuelve una vista con la documentacion swagger, debe abrirse desde un navegador o medio donde se pueda usar CORS
+
+    URL:    /api-docs
+    Método HTTP:    GET
+    
+
+    Ejemplo de Solicitud
+
+        URL:
+            GET https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev/personajes
