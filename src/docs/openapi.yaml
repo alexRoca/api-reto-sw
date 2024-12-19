@@ -1,0 +1,82 @@
+openapi: 3.0.0
+info:
+  title: API Reto Tecnico SW
+  description: API para gestionar personajes de Star Wars almacenados en DynamoDB.
+  version: 1.0.0
+servers:
+  - url: https://{api-id}.execute-api.{region}.amazonaws.com/{stage}
+    description: URL de la API en AWS API Gateway
+paths:
+  /personaje:
+    post:
+      summary: Registrar un personaje en la base de datos
+      description: Este endpoint permite registrar un nuevo personaje en DynamoDB. Se requieren los campos `id`, `nombre`, `altura`, `peso`, y `genero`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Character'
+      responses:
+        '201':
+          description: Personaje creado con éxito
+        '500':
+          description: Error al crear el personaje
+
+  /personaje/{id}:
+    get:
+      summary: Obtener un personaje por ID
+      description: Este endpoint busca un personaje en DynamoDB por su ID. Si no se encuentra en DynamoDB, lo busca en SWAPI, lo almacena en la base de datos y lo devuelve.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID del personaje de Star Wars
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Personaje encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Character'
+        '500':
+          description: Error al obtener el personaje
+
+  /personajes:
+    get:
+      summary: Obtener todos los personajes almacenados en la base de datos
+      description: Este endpoint devuelve todos los personajes que han sido registrados en DynamoDB.
+      responses:
+        '200':
+          description: Lista de personajes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Character'
+        '500':
+          description: Error al obtener los personajes
+
+components:
+  schemas:
+    Character:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID del personaje (es el ID que provee SWAPI)
+        nombre:
+          type: string
+          description: Nombre del personaje
+        altura:
+          type: string
+          description: Altura del personaje
+        peso:
+          type: string
+          description: Peso del personaje
+        genero:
+          type: string
+          description: Género del personaje
