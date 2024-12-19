@@ -2,7 +2,9 @@
 
 ## Documentación de Uso del API
 
-Este API interactúa con una base de datos DynamoDB para almacenar y consultar personajes de Star Wars almacenados (utiliza el api SWAPI personajes no registrados anteriormente y lo consultado se almacena en  DynamoDB). Se maneja tres endpoints los cuales son los siguientes:
+Este API interactúa con una base de datos DynamoDB para almacenar y consultar personajes de Star Wars almacenados (utiliza el api SWAPI personajes no registrados anteriormente y lo consultado se almacena en  DynamoDB). 
+Se maneja tres endpoints los cuales son los siguientes :
+(las URLs a continuacion pueden ser consumidas para pruebas, ya que estan cargadas a una cuenta de AWS)
 
 URL Base
 
@@ -23,7 +25,7 @@ https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev
     Ejemplo de Solicitud
 
         URL :
-            GET https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev/personaje/1
+            GET https://makj77uefg.execute-api.us-east-1.amazonaws.com/dev/personaje/1
 
         Respuesta Exitosa :
             {
@@ -52,7 +54,7 @@ https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev
     Ejemplo de Solicitud
 
         URL :
-            POST https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev/personaje
+            POST https://makj77uefg.execute-api.us-east-1.amazonaws.com/dev/personaje
 
         JSON: 
             {
@@ -92,7 +94,7 @@ https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev
     Ejemplo de Solicitud
 
         URL:
-            GET https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev/personajes
+            GET https://makj77uefg.execute-api.us-east-1.amazonaws.com/dev/personajes
 
         Respuesta Exitosa (en caso de tener datos):
         [
@@ -122,9 +124,9 @@ https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev
 
     URL:    /api-docs
     Método HTTP:    GET
-    
+
 
     Ejemplo de Solicitud
 
         URL:
-            GET https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev/personajes
+            GET https://makj77uefg.execute-api.us-east-1.amazonaws.com/dev/api-docs
