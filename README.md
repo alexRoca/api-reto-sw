@@ -8,7 +8,7 @@ Se maneja tres endpoints los cuales son los siguientes :
 
 URL Base
 
-https://lc2xugi5e0.execute-api.us-east-1.amazonaws.com/dev
+https://makj77uefg.execute-api.us-east-1.amazonaws.com/dev/
 
 ### Endpoints:
 
